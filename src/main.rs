@@ -1,4 +1,4 @@
-// use std::io;
+use std::io;
 // use rand::Rng;
 // use std::cmp::Ordering;
 fn main(){
@@ -47,7 +47,7 @@ fn main(){
     // println!("Space Count:{spaces}");
 
     // //Tuple
-    // let tup = ('C',21, "Tinkune",3.0);
+    //let tup = ('C',21, "Tinkune",3.0);
     
     // //Method 1 of accessing tuple
     // let(a,b,c,d) = tup;
@@ -58,4 +58,32 @@ fn main(){
     // let completed_year = tup.3;
     // println!("{completed_year}");
 
+    // //Arrays
+    // let a = [1,2,3,4,5];
+    // let b = [10;10]; //contains 10 small value '10'
+    // let first = a[3];
+    // let second= b[8];
+    // println!("{first}");
+    // println!("{second}");
+
+    // //Function
+    // let ret:i32 = abc();
+    // println!("{ret}");
+
+    let mut n = String::new();
+    println!("Enter a number.");
+    io::stdin().read_line(&mut n).expect("Failed to read input.");
+    let n = n.trim().parse().expect("Input a number.");
+    let n:i32 = self_multiply(n);
+    println!("{n}");
+
+
+
+
+}
+// fn abc()->i32{
+//     5*6
+// }
+ fn self_multiply(a:i32)->i32{
+    a*a
 }
