@@ -204,6 +204,18 @@ fn main(){
     // let r3 = &mut string2; //This is valid because the scope of r1 and r2 has ended with println!.
     // println!("{r3}");
 
+
+    // //Slices
+    // let name = String::from("Shishant Shrestha");
+    // let slice1 = &name[..=5];
+    // let slice2 = &name[3..];
+    // let slice3 =&name[4..8];
+    // println!("{} {} {}",slice1,slice2,slice3);
+
+
+
+
+
 }
 // fn abc()->i32{
 //     5*6
