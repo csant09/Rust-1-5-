@@ -129,10 +129,106 @@ fn main(){
     // }
 
 
+    // //Stack Representation of string
+    // let s1 = "hello"; 
+    // //even if we declare s1 as mutable, we can't perform push operation because it isn't heap.
+    // println!("{}",s1);
+
+    // //Heap Representaion of string
+    // let mut s2 = String::from("hello");
+    // s2.push_str(" world");
+    // println!("{}",s2);
+
+    //Shallow Copy or Move
+    //Shallow copy means that instead of copying the actual data "hello world" to both heaps c1 and c2,
+    //only the pointer is copied. i.e. only one stack data, and two heaps poinitng to the same data.
+    // let c1 = String::from("hello world");
+    // let c2 = c1;
+    // //println!("{}",c1); //This line will generate an error because c1 has already been moved to c2
+                            // and no longer exists to prevent double dropping(freeing) 
+    // println!("{}",c2);
+
+
+    // //Deep Copy
+    // //Unlike shallow copy, two separate stacks are created aka clones.
+    // let d1 = String::from("hello world");
+    // let d2 = d1.clone();
+    // println!("{} {}",d1,d2);
+
+
+    // //Variation of Move also occurs in the function calls.
+    // let e = String::from("Csant");
+    // move_string(e);
+    // //println!("{}",e);  //This will generate an error as e was moved to the function as a parameter.
+
+    // let f = 2;
+    // copy_number(f); //This doesn't generate error because integer is a stack type; not heap.
+    // println!("{}",f);
+
+    // //How to reuse the data that also needs to be passed in the funtion?
+    // //Method 1: Tuples
+    // let re=String::from("Csant");
+    // let (a,b):(String,usize) = push_and_return(re);
+    // println!("The length of {a} is {b}.");
+
+    // //Method 2: References
+    // let re = String::from("C Sant Shrestha");
+    // let a = calculate_len(&re);
+    // println!("The length of {re} is {a}.");
+    // //The changes made through references lasts i.e. is present after the function ends.
+
+    // //Mutable and Immutable References
+    //let string1 = String::from("Rust");
+    // let mut string2 = String::from("Programming");
+    // change_immutable(&string1);
+    // change_immutable(&string2);
+    // //change_mutable(&string1); //This line will cause an error because string1 isn't mutable.
+    // //string2 although mutable can be passed as immutable.
+    // //This is because immutability has no strict requirements but mutability does.
+    // change_mutable(&mut string2);
+
+    // //Multiple mutable and immutable references
+    // let r1 = &string1;
+    // let r2 = &string1;
+    // //Multiple immutable references are permitted but, multiple mutable references isn't possible.
+    // let r3 = &string2;
+    // let r4=&string2;
+    // //let r5 = &mut string2; //This line will cause an error as
+    // //string2 can't be referenced as mutable and immutable at the same time.
+    // println!("{} {} {} {} ",r1,r2,r3,r4);
+
+    // //However there is an exception when mutable and immutable can co-exist.
+    // let r1 = &string2;
+    // let r2 = &string2;
+    // println!("{r1} {r2} ");
+    // let r3 = &mut string2; //This is valid because the scope of r1 and r2 has ended with println!.
+    // println!("{r3}");
+
 }
 // fn abc()->i32{
 //     5*6
 // }
 //  fn self_multiply(a:i32)->i32{
 //     a*a
+// }
+// fn move_string(e1:String){
+//     println!("{}",e1);
+// }
+// fn copy_number(f1:i32){
+//     println!("{}",f1);
+// }
+// fn push_and_return(mut re:String)->(String,usize){
+//     re.push_str(" Shrestha");
+//     let length = re.len();
+//     (re,length)
+// }
+// fn calculate_len(re1:&String)->usize{
+//     re1.len()
+// }
+// fn change_mutable(c:&mut String){
+//     c.push_str(" hehehe");
+//     println!("{c}");
+// }
+// fn change_immutable(c:&String){
+//     println!("{c} hehehe");
 // }
