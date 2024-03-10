@@ -1,6 +1,15 @@
 //use std::io;
 // use rand::Rng;
 // use std::cmp::Ordering;
+// #[derive(Debug)]
+// struct School(String,u32,u32,String);
+// #[derive(Debug)]
+// struct Cuboid{
+//     length:u32,
+//     breadth:u32,
+//     height:u32
+// }
+
 fn main(){
     // //Guessing Game
     // let mut count: i32=0;
@@ -162,8 +171,8 @@ fn main(){
     // //println!("{}",e);  //This will generate an error as e was moved to the function as a parameter.
 
     // let f = 2;
-    // copy_number(f); //This doesn't generate error because integer is a stack type; not heap.
-    // println!("{}",f);
+    // copy_number(f); 
+    // println!("{}",f);   //This doesn't generate error because integer is a stack type; not heap.
 
     // //How to reuse the data that also needs to be passed in the funtion?
     // //Method 1: Tuples
@@ -213,10 +222,70 @@ fn main(){
     // println!("{} {} {}",slice1,slice2,slice3);
 
 
+    // //Structure
+    // //Structures are defined out of the main scope.
+    // struct User{
+    //     id:u32,
+    //     name:String,
+    //     email:String,
+    //     active: bool
+    // }
+
+    // //Struct Instantiation
+    // let mut user1 = User{
+    //     id:1,
+    //     name: String::from("Csant"),
+    //     email: String::from("shish@gmail.com"),
+    //     active: true
+    // };
+    // let mut user2 = User{
+    //     id:2,
+    //     name: String::from("Shishant"),
+    //     email: String::from("shishant@gmail.com"),
+    //     active: false
+    // };
+    // user1.id=101;
+    // user2.id=102;
+    // user2.email=String::from("shi@gmail.com");
+    // println!("{} {} {} {} ",user1.id,user1.name,user1.email,user1.active);
+    // println!("{} {} {} {} ",user2.id,user2.name,user2.email,user2.active);
+    // let user12 = User{
+    //     id:user2.id,
+    //     name:user2.name,
+    //     ..user1 // .. means that the remaining fields are same as that of user1.
+    // };
+    // println!("{} {} {} {} ",user12.id,user12.name,user12.email,user12.active);
 
 
+    // //Tuple Structs
+    // //the struct school is defined outside main.
+    // let s1 = School(String::from("Everest"),2003,14,String::from("Satdobato"));
+    // println!("{:?}",s1); //derivedebug is used to allow this.
+
+
+    // let cuboid1 = Cuboid{
+    //     length:50,
+    //     breadth:60,
+    //     height:34,
+    // };
+    // let cuboid2 = Cuboid{
+    //     length:100,
+    //     ..cuboid1
+    // };
+    // let area1 = area_of_cuboid(&cuboid1);
+    // let area2 = area_of_cuboid(&cuboid2);
+    // println!("Area of the first cuboid({}*{}*{}):{area1}",cuboid1.length,cuboid1.breadth,cuboid1.height);
+    // println!("Area of the second cuboid({}*{}*{}):{area2}",cuboid2.length,cuboid2.breadth,cuboid2.height);
+
+    // //Printing structs
+    // //Note that #[derive(Debug)] is to be added above each and every struct you want printed in the following manner.
+    // println!("{:?}",cuboid1);
+    // println!("{:#?}",cuboid2);
 
 }
+// fn area_of_cuboid(cuboid:&Cuboid)->u32{
+//     2*(cuboid.length*cuboid.breadth+cuboid.breadth*cuboid.height+cuboid.height*cuboid.length)
+// }
 // fn abc()->i32{
 //     5*6
 // }
