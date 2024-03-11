@@ -4,19 +4,19 @@
 // #[derive(Debug)]
 // struct School(String,u32,u32,String);
 // #[derive(Debug)]
-struct Cuboid{
-    length:u32,
-    breadth:u32,
-    height:u32
-}
-impl Cuboid{
-    fn is_large(&self)->bool {
-        self.length>30 && self.breadth>30 && self.height>30
-    }
-    fn is_larger_than(&self,other:Cuboid)->bool{
-        self.length>=other.length && self.breadth>=other.breadth&&self.height>=other.height
-    }
-}
+// struct Cuboid{
+//     length:u32,
+//     breadth:u32,
+//     height:u32
+// }
+// impl Cuboid{
+//     fn is_large(&self)->bool {
+//         self.length>30 && self.breadth>30 && self.height>30
+//     }
+//     fn is_larger_than(&self,other:&Cuboid)->bool{
+//         self.length>=other.length && self.breadth>=other.breadth&&self.height>=other.height
+//     }
+// }
 
 fn main(){
     // //Guessing Game
@@ -271,15 +271,16 @@ fn main(){
     // println!("{:?}",s1); //derivedebug is used to allow this.
 
 
-    let cuboid1 = Cuboid{
-        length:50,
-        breadth:60,
-        height:34,
-    };
-    let cuboid2 = Cuboid{
-        length:100,
-        ..cuboid1
-    };
+    // let cuboid1 = Cuboid{
+    //     length:50,
+    //     breadth:60,
+    //     height:34,
+    // };
+    // let cuboid2 = Cuboid{
+    //     length:100,
+    //     ..cuboid1
+    // };
+
     // let area1 = area_of_cuboid(&cuboid1);
     // let area2 = area_of_cuboid(&cuboid2);
     // println!("Area of the first cuboid({}*{}*{}):{area1}",cuboid1.length,cuboid1.breadth,cuboid1.height);
@@ -291,10 +292,10 @@ fn main(){
     // println!("{:#?}",cuboid2);
 
     //Methods
-    let result1 = cuboid1.is_large();
-    println!("Cuboid1 big? {}",result1);
-    let result2 = cuboid2.is_larger_than(cuboid1);
-    println!("Cuboid2 bigger than Cuboid1? {}",result2);
+    // let result1 = cuboid1.is_large();
+    // println!("Cuboid1 big? {}",result1);
+    // let result2 = cuboid2.is_larger_than(&cuboid1);
+    // println!("Cuboid2 bigger than Cuboid1? {}",result2);
 
 
 
